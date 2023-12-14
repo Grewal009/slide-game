@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide Puzzel</title>
+    <style>
+      div {
+        color: black;
+        background-color: rgb(150, 227, 202);
+        border: solid green 2px;
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+        margin: 10px;
+        padding: 10px;
+        float: left;
+      }
+      div.førstPåLinje {
+        clear: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="r1k1" onclick="trykkAlternativer2(this, 'r1k2','r2k1')">1</div>
+    <div id="r1k2" onclick="trykkAlternativer3(this,'r1k1','r2k2','r1k3')">
+      2
+    </div>
+    <div id="r1k3" onclick="trykkAlternativer2(this,'r1k2','r2k3')">3</div>
+    <div
+      id="r2k1"
+      class="førstPåLinje"
+      onclick="trykkAlternativer3(this,'r1k1','r2k2','r3k1')"
+    >
+      4
+    </div>
+    <div
+      id="r2k2"
+      onclick="trykkAlternativer4(this,'r1k2','r2k1','r2k3','r3k2')"
+    ></div>
+    <div id="r2k3" onclick="trykkAlternativer3(this,'r1k3','r2k2','r3k3')">
+      5
+    </div>
+    <div
+      id="r3k1"
+      class="førstPåLinje"
+      onclick="trykkAlternativer2(this,'r2k1','r3k2')"
+    >
+      6
+    </div>
+    <div id="r3k2" onclick="trykkAlternativer3(this,'r3k1','r2k2','r3k3')">
+      7
+    </div>
+    <div id="r3k3" onclick="trykkAlternativer2(this,'r2k3','r3k2')">8</div>
+
+    <script>
+      function trykkAlternativer2(klikkElement, ele1, ele2) {
+        if (document.getElementById(ele1).innerHTML == "") {
+          document.getElementById(ele1).innerHTML = klikkElement.innerHTML;
+          klikkElement.innerHTML = "";
+        } else if (document.getElementById(ele2).innerHTML == "") {
+          document.getElementById(ele2).innerHTML = klikkElement.innerHTML;
+          klikkElement.innerHTML = "";
+        }
+      }
+      function trykkAlternativer3(klikkElement, ele1, ele2, ele3) {
+        if (document.getElementById(ele1).innerHTML == "") {
+          document.getElementById(ele1).innerHTML = klikkElement.innerHTML;
+          klikkElement.innerHTML = "";
+        } else if (document.getElementById(ele2).innerHTML == "") {
+          document.getElementById(ele2).innerHTML = klikkElement.innerHTML;
+          klikkElement.innerHTML = "";
+        } else if (document.getElementById(ele3).innerHTML == "") {
+          document.getElementById(ele3).innerHTML = klikkElement.innerHTML;
+          klikkElement.innerHTML = "";
+        }
+      }
+      function trykkAlternativer4(klikkElement, ele1, ele2, ele3, ele4) {
+        if (document.getElementById(ele1).innerHTML == "") {
+          document.getElementById(ele1).innerHTML = klikkElement.innerHTML;
+          klikkElement.innerHTML = "";
+        } else if (document.getElementById(ele2).innerHTML == "") {
+          document.getElementById(ele2).innerHTML = klikkElement.innerHTML;
+          klikkElement.innerHTML = "";
+        } else if (document.getElementById(ele3).innerHTML == "") {
+          document.getElementById(ele3).innerHTML = klikkElement.innerHTML;
+          klikkElement.innerHTML = "";
+        } else if (document.getElementById(ele4).innerHTML == "") {
+          document.getElementById(ele4).innerHTML = klikkElement.innerHTML;
+          klikkElement.innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>
